@@ -1,0 +1,16 @@
+ul li {
+    list-style: none;
+    color: gray;
+}
+
+.list-item:hover {
+    cursor: pointer;
+    color: black;
+    border-bottom: 3px solid orange;
+    padding-bottom: 10px;
+}
+
+.ul-navbar {
+    display: flex;
+    gap: 10px;
+}
