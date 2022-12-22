@@ -1,0 +1,11 @@
+.header {
+    height: 120px;
+    padding-left: 50px;
+    padding-right: 50px;
+    display: flex;
+}
+.container-logo {
+    display: inline-flex;
+    align-items: center;
+    flex-direction: row-reverse;
+}
