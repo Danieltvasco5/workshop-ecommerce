@@ -1,0 +1,30 @@
+.navbar {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 0.2fr 1fr 0.2fr;
+    align-items: center;
+    border-bottom: 1px gray solid ;
+}
+ul, li {
+    list-style: none;
+    color: gray;
+    margin: 0;
+}
+
+
+.list-item:hover {
+    cursor: pointer;
+    color: black;
+    border-bottom: 3px solid orange;
+    padding-bottom: 10px;
+}
+.list-item:active {
+    border-bottom: 3px solid orange;
+    padding-bottom: 10px;
+    color: black;
+}
+
+.ul-navbar {
+    display: flex;
+    gap: 30px;
+}
