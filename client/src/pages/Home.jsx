@@ -1,32 +1,38 @@
 import React from 'react';
-import Card from "../components/Card";
-import axios from "axios";
-
-
 import '../styles/Home.css';
+import {TodoContext} from "../TodoContext";
+import Card from "../components/Card";
 const Home =  () => {
-    const [info, setInfo] = React.useState([]);
-    React.useEffect(() => {
-       axios.get('http://localhost:3006/productos').then((response) =>  {
-           setInfo(response.data)
-       });
 
-    }, [])
+    const { info, data } = React.useContext(TodoContext);
 
 
     return (
-        <div className="container-cards">
-            {
-                info.map(card => (
-                    <Card
-                        key={card.id}
-                        image={card.img1}
-                        empresa={card.empresa}
-                        modelo={card.modelo}
-                        precio={card.precio}
-                    />
-                ))
-            }
+        <div className="container-main">
+            <div className="container-cards">
+                {
+                    info.length === 0 ?
+                        data.map(card => (
+                            <Card
+                                key={card.id}
+                                id={card.id}
+                                image={card.img1}
+                                empresa={card.empresa}
+                                modelo={card.modelo}
+                                precio={card.precio}
+                            />
+                        )):
+                        info.map(card => (
+                            <Card
+                                key={card.id}
+                                image={card.img1}
+                                empresa={card.empresa}
+                                modelo={card.modelo}
+                                precio={card.precio}
+                            />
+                        ))
+                }
+            </div>
         </div>
     );
 };

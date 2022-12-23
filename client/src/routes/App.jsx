@@ -3,19 +3,20 @@ import {HashRouter, Routes, Route} from 'react-router-dom';
 import Home from "../pages/Home";
 import Layout from "../components/Layout";
 import Header from "../components/Header";
-import About from "../pages/About";
-import Contact from "../pages/Contact";
+import {DetailProduct} from "../components/DetailProduct";
+import {TodoProvider} from "../TodoContext";
 const App = () => {
     return (
         <HashRouter>
-            <Layout>
-                <Header />
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/about" element={<About />} />
-                    <Route path="/contact" element={<Contact />} />
-                </Routes>
-            </Layout>
+            <TodoProvider>
+                <Layout>
+                    <Header />
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/detail" element={<DetailProduct />} />
+                    </Routes>
+                </Layout>
+            </TodoProvider>
         </HashRouter>
     );
 };
