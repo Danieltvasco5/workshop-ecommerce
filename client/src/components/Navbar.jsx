@@ -3,16 +3,20 @@ import '../styles/NavBar.css'
 import logo from "../img/logo.svg";
 import ProfileCart from "./ProfileCart";
 import {Link} from "react-router-dom";
+import {TodoContext} from "../TodoContext";
 
-// const opc = ['Collection', 'Men', 'Women', 'About', 'Contact']
-const opc = [
-    {to: '/', text: 'Collection'},
-    {to: '/', text: 'Men'},
-    {to: '/', text: 'Women'},
-    {to: '/about', text: 'About'},
-    {to: '/contact', text: 'Contact'}
-]
+const opc = ['Collection', 'Men', 'Women', 'About', 'Contact']
+
 export const Navbar = () => {
+
+    const {data, setInfo, info} = React.useContext(TodoContext);
+    const filterCategory = (opc) => {
+        const result = data.filter(item => {
+            return item.gender === opc
+        })
+        setInfo(result)
+    }
+
     return (
         <nav className="navbar">
             <div className="container-logo">
@@ -21,8 +25,8 @@ export const Navbar = () => {
             <ul className='ul-navbar'>
                 {
                     opc.map(item => (
-                        <li className="list-item" key={item.text}>
-                            <Link to={item.to}>{item.text}</Link>
+                        <li className="list-item" key={item}>
+                            <span onClick={() => filterCategory(item)}>{item}</span>
                         </li>
                     ))
                 }
