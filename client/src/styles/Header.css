@@ -1,9 +1,10 @@
 .header {
+    width: 100vw;
     height: 120px;
-    padding-left: 50px;
-    padding-right: 50px;
+    margin: 0 5px;
     display: flex;
 }
+
 .container-logo {
     display: inline-flex;
     align-items: center;

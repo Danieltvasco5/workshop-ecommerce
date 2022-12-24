@@ -1,8 +1,8 @@
 import React from 'react';
 import '../styles/Home.css';
-import {TodoContext} from "../TodoContext";
+import { TodoContext } from "../TodoContext";
 import Card from "../components/Card";
-const Home =  () => {
+const Home = () => {
 
     const { info, data } = React.useContext(TodoContext);
 
@@ -10,6 +10,7 @@ const Home =  () => {
     return (
         <div className="container-main">
             <div className="container-cards">
+                <h1 className="h1-colletion">Collection</h1>
                 {
                     info.length === 0 ?
                         data.map(card => (
@@ -21,7 +22,7 @@ const Home =  () => {
                                 modelo={card.modelo}
                                 precio={card.precio}
                             />
-                        )):
+                        )) :
                         info.map(card => (
                             <Card
                                 key={card.id}
@@ -33,6 +34,7 @@ const Home =  () => {
                         ))
                 }
             </div>
+            <hr />
         </div>
     );
 };

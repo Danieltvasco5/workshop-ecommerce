@@ -1,9 +1,22 @@
-.user-profile {
-    width: 50px;
-    height: 50px;
-    margin-left: 50px;
+.container-profile {
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
+
+.user-profile {
+    width: 35px;
+}
+
+.user-profile:hover {
+    cursor: pointer;
+}
+
 .icon-cart {
-    position: relative;
-    bottom: 15px;
+    width: 25px;
+    height: 25px;
+}
+
+.icon-cart:hover {
+    cursor: pointer;
 }
